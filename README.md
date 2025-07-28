@@ -1,21 +1,27 @@
-**ValRaTech Demo for Karate Testing**
+# ValRaTech Demo for Karate Testing
+
 A simple Spring Boot app with basic REST endpoints and a minimal frontend, created for practicing API and UI tests using the Karate framework.
 
-**Features**
-GET /hello — greeting endpoint
-POST /name — echoes posted message
-DELETE /clear — clears greeting
+## Features
 
-**Basic HTML/JS frontend for UI testing**
+- `GET /hello` — greeting endpoint  
+- `POST /name` — echoes posted message  
+- `DELETE /clear` — clears greeting  
 
-**Build and Run**
-_**Build the project with:**_
+Basic HTML/JS frontend for UI testing
+
+## Build and Run
+
+**Build the project with:**  
+```bash
 mvn clean install
 
-_**Run the app with:**_
+**Run the app with:**  
+```bash
 mvn spring-boot:run
 
-_Visit http://localhost:8080 to try the UI._
+Visit http://localhost:8080 to try the UI.
 
-**Usage**
+## Usage
+
 Use this app as a target for Karate API, Performance and UI automation tests.
