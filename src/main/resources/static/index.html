@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Karate UI Test Page</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          padding: 0;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background: #f4f4f8;
+        }
+
+        .container {
+          text-align: center;
+          background: white;
+          padding: 40px;
+          border-radius: 16px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+          width: 500px;
+        }
+
+        h1 {
+          margin-bottom: 24px;
+          color: #333;
+        }
+
+        input {
+          padding: 10px;
+          width: 100%;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          font-size: 16px;
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: #808080;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.2s ease-in-out;
+        }
+
+        button:hover {
+          background-color: #000000;
+        }
+
+        p#greeting {
+          margin-top: 30px;
+          font-weight: bold;
+          color: #444;
+        }
+
+        img {
+          max-width: 90px;
+          margin-bottom: 20px;
+        }
+
+         #clearBtn {
+        background-color: #ef4444; /* Tailwind-style red */
+        color: white;
+        font-size: 12px;
+        padding: 6px 12px;
+        margin-top: 8px;
+      }
+
+      #clearBtn:hover {
+        background-color: #dc2626;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="logo.png" alt="Logo">
+    <h1>Welcome to ValRaTech</h1>
+    <label for="name"><input id="name" placeholder="Enter your name"/></label>
+    <button onclick="sayHello()">Say Hello</button>
+    <p id="greeting"></p>
+    <button id="clearBtn" onclick="deleteGreeting()" style="display: none;">Clear</button>
+</div>
+
+<script>
+    function sayHello() {
+    const name = document.getElementById('name').value.trim();
+    const greetingEl = document.getElementById('greeting');
+    const clearBtn = document.getElementById('clearBtn');
+
+    if (name) {
+      greetingEl.textContent = `Hello, ${name}!`;
+      clearBtn.style.display = 'inline-block'; // show red button
+    } else {
+      greetingEl.textContent = "Please enter your name.";
+      clearBtn.style.display = 'none';
+    }
+  }
+
+  function deleteGreeting() {
+    document.getElementById('name').value = '';
+    document.getElementById('greeting').textContent = '';
+    document.getElementById('clearBtn').style.display = 'none';
+
+      fetch('/clear', { method: 'DELETE' })
+        .then(response => {
+          if (!response.ok) {
+            alert('Failed to clear greeting on server.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+  }
+</script>
+</body>
+</html>
