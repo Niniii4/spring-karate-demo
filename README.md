@@ -1,6 +1,6 @@
 # ValRaTech Demo for Karate Testing
 
-A simple Spring Boot app with basic REST endpoints and a minimal frontend, created for practicing API and UI tests using the Karate framework.
+A simple Spring Boot app with basic REST endpoints and a minimal frontend, created for practicing API, Performance and UI tests using the Karate framework.
 
 ## Features
 
