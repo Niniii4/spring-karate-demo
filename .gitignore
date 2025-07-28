@@ -1,4 +1,4 @@
 # Project exclude paths
 /target/
 /.idea/
-/spring-karate-demo.iml/
+spring-karate-demo.iml
