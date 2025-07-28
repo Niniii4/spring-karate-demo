@@ -15,10 +15,12 @@ Basic HTML/JS frontend for UI testing
 **Build the project with:**  
 ```bash
 mvn clean install
+```
 
 **Run the app with:**  
 ```bash
 mvn spring-boot:run
+```
 
 Visit http://localhost:8080 to try the UI.
 
